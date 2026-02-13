@@ -35,7 +35,7 @@ const PlanDisplay: React.FC<PlanDisplayProps> = ({ plan }) => {
     <section id="results" className="max-w-7xl mx-auto px-6 py-24 animate-in fade-in slide-in-from-bottom-8 duration-1000">
       <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-8">
         <div>
-          <div className="inline-block px-3 py-1 rounded-md bg-indigo-500/10 text-indigo-400 text-[10px] font-bold uppercase tracking-widest mb-4">
+          <div className="inline-block px-3 py-1 rounded-md bg-emerald-500/10 text-emerald-400 text-[10px] font-bold uppercase tracking-widest mb-4">
             Analysis Complete
           </div>
           <h2 className="text-4xl md:text-5xl font-bold font-outfit text-white mb-3 tracking-tight">Your Optimized Blueprint</h2>
@@ -51,20 +51,20 @@ const PlanDisplay: React.FC<PlanDisplayProps> = ({ plan }) => {
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-20">
-        <RoutineCard title="AM Foundations" tasks={plan.morningRoutine} icon="🌅" accentColor="text-amber-400" />
-        <RoutineCard title="Peak Momentum" tasks={plan.afternoonRoutine} icon="🔥" accentColor="text-indigo-400" />
-        <RoutineCard title="PM Restoration" tasks={plan.eveningRoutine} icon="🌙" accentColor="text-fuchsia-400" />
+        <RoutineCard title="AM Foundations" tasks={plan.morningRoutine} icon="🌅" accentColor="text-emerald-400" />
+        <RoutineCard title="Peak Momentum" tasks={plan.afternoonRoutine} icon="🔥" accentColor="text-teal-400" />
+        <RoutineCard title="PM Restoration" tasks={plan.eveningRoutine} icon="🌙" accentColor="text-green-400" />
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
         <div className="lg:col-span-7 space-y-8">
           <div className="bg-slate-900 border border-slate-800 rounded-[2.5rem] p-10 overflow-hidden relative group shadow-2xl">
             <div className="absolute top-0 right-0 p-8 opacity-5 group-hover:opacity-10 transition-opacity">
-              <svg className="w-40 h-40 text-indigo-500" fill="currentColor" viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+              <svg className="w-40 h-40 text-emerald-500" fill="currentColor" viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
             </div>
             
             <h3 className="text-2xl font-bold font-outfit text-white mb-8 relative flex items-center gap-3">
-              <span className="w-1.5 h-6 bg-indigo-500 rounded-full"></span>
+              <span className="w-1.5 h-6 bg-emerald-500 rounded-full"></span>
               Core Growth Habits
             </h3>
             
@@ -72,7 +72,7 @@ const PlanDisplay: React.FC<PlanDisplayProps> = ({ plan }) => {
               {plan.habits.map((h, i) => (
                 <div key={i} className="flex flex-col gap-3 bg-slate-800/30 p-6 rounded-3xl border border-slate-800/50 hover:border-slate-700 transition-all">
                   <div className="flex items-center justify-between">
-                    <h4 className="font-bold text-indigo-300 text-lg">{h.habit}</h4>
+                    <h4 className="font-bold text-emerald-300 text-lg">{h.habit}</h4>
                     <span className="text-[10px] font-black uppercase tracking-tighter text-slate-500 bg-slate-900 px-2 py-0.5 rounded border border-slate-800">{h.frequency}</span>
                   </div>
                   <p className="text-sm text-slate-400 leading-relaxed">{h.benefit}</p>
@@ -94,22 +94,22 @@ const PlanDisplay: React.FC<PlanDisplayProps> = ({ plan }) => {
 
         <div className="lg:col-span-5 bg-slate-900/80 rounded-[2.5rem] p-10 border border-slate-800 shadow-xl flex flex-col backdrop-blur-md">
           <h3 className="text-2xl font-bold font-outfit text-white mb-10 flex items-center gap-3">
-            <span className="w-10 h-10 rounded-2xl bg-violet-500/10 text-violet-400 flex items-center justify-center text-lg">📅</span>
+            <span className="w-10 h-10 rounded-2xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-lg">📅</span>
             Weekly Milestones
           </h3>
           <div className="space-y-5 flex-1">
             {plan.weeklyGoals.map((goal, i) => (
               <div key={i} className="flex items-center gap-5 p-5 rounded-2xl border border-slate-800/50 hover:bg-slate-800/40 hover:border-slate-700 transition-all group">
                 <div className="relative">
-                  <input type="checkbox" className="w-6 h-6 rounded-lg border-slate-700 bg-slate-950 text-indigo-500 focus:ring-indigo-600 focus:ring-offset-slate-900 cursor-pointer peer" />
+                  <input type="checkbox" className="w-6 h-6 rounded-lg border-slate-700 bg-slate-950 text-emerald-500 focus:ring-emerald-600 focus:ring-offset-slate-900 cursor-pointer peer" />
                   <div className="absolute inset-0 pointer-events-none rounded-lg ring-1 ring-slate-700 group-hover:ring-slate-500 transition-all"></div>
                 </div>
                 <span className="text-slate-300 font-medium group-hover:text-white transition-colors peer-checked:line-through peer-checked:text-slate-600">{goal}</span>
               </div>
             ))}
           </div>
-          <div className="mt-12 p-6 rounded-[1.5rem] bg-indigo-500/5 border border-indigo-500/10 text-center">
-            <p className="text-[10px] text-indigo-400 font-black uppercase tracking-[0.2em] mb-2">Systems Status</p>
+          <div className="mt-12 p-6 rounded-[1.5rem] bg-emerald-500/5 border border-emerald-500/10 text-center">
+            <p className="text-[10px] text-emerald-400 font-black uppercase tracking-[0.2em] mb-2">Systems Status</p>
             <p className="text-slate-400 font-medium text-sm">Synchronized with your Core Mission.</p>
           </div>
         </div>

@@ -50,7 +50,7 @@ const App: React.FC = () => {
   if (authLoading) {
     return (
       <div className="min-h-screen bg-slate-950 flex items-center justify-center">
-        <div className="w-10 h-10 border-4 border-indigo-500/30 border-t-indigo-500 rounded-full animate-spin"></div>
+        <div className="w-10 h-10 border-4 border-emerald-500/30 border-t-emerald-500 rounded-full animate-spin"></div>
       </div>
     );
   }
@@ -94,11 +94,11 @@ const App: React.FC = () => {
       </main>
 
       <footer className="bg-slate-950 py-24 px-6 relative border-t border-slate-900">
-        <div className="absolute inset-0 bg-indigo-500/5 blur-[120px] rounded-full pointer-events-none"></div>
+        <div className="absolute inset-0 bg-emerald-500/5 blur-[120px] rounded-full pointer-events-none"></div>
         <div className="max-w-7xl mx-auto relative flex flex-col md:flex-row justify-between items-center gap-12">
           <div className="flex flex-col items-center md:items-start gap-4">
             <div className="flex items-center gap-2">
-              <div className="w-8 h-8 bg-indigo-600 rounded-lg flex items-center justify-center text-white text-sm font-bold shadow-lg shadow-indigo-600/20">L</div>
+              <div className="w-8 h-8 bg-emerald-600 rounded-lg flex items-center justify-center text-white text-sm font-bold shadow-lg shadow-emerald-600/20">L</div>
               <span className="font-outfit font-bold text-2xl text-white">LifePlanner.ai</span>
             </div>
             <p className="text-slate-500 max-w-sm text-center md:text-left font-light leading-relaxed">
@@ -107,10 +107,10 @@ const App: React.FC = () => {
           </div>
           
           <div className="flex flex-col items-center md:items-end gap-6 text-slate-500">
-             <div className="flex gap-10 font-medium">
-               <a href="#" className="hover:text-indigo-400 transition-colors">Framework</a>
-               <a href="#" className="hover:text-indigo-400 transition-colors">Privacy</a>
-               <a href="#" className="hover:text-indigo-400 transition-colors">Support</a>
+             <div className="flex gap-10 font-medium text-slate-400">
+               <a href="#" className="hover:text-emerald-400 transition-colors">Framework</a>
+               <a href="#" className="hover:text-emerald-400 transition-colors">Privacy</a>
+               <a href="#" className="hover:text-emerald-400 transition-colors">Support</a>
              </div>
              <p className="text-sm">© {new Date().getFullYear()} AI Life Planner Labs.</p>
           </div>

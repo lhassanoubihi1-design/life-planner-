@@ -45,7 +45,7 @@ const TodoList: React.FC = () => {
             <h3 className="text-xl font-bold font-outfit text-white">Daily Focus</h3>
             <p className="text-sm text-slate-400">High-priority tasks for today</p>
           </div>
-          <div className="text-xs font-bold text-indigo-400 bg-indigo-500/10 px-3 py-1 rounded-full uppercase tracking-widest">
+          <div className="text-xs font-bold text-emerald-400 bg-emerald-500/10 px-3 py-1 rounded-full uppercase tracking-widest">
             {todos.filter(t => t.completed).length} / {todos.length} Done
           </div>
         </div>
@@ -56,11 +56,11 @@ const TodoList: React.FC = () => {
             value={inputValue}
             onChange={(e) => setInputValue(e.target.value)}
             placeholder="Add a new priority..."
-            className="flex-1 bg-white/5 border border-white/10 rounded-2xl px-6 py-3 text-white placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/50 transition-all"
+            className="flex-1 bg-white/5 border border-white/10 rounded-2xl px-6 py-3 text-white placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-emerald-500/50 transition-all"
           />
           <button 
             type="submit"
-            className="bg-indigo-600 hover:bg-indigo-500 text-white w-12 h-12 flex items-center justify-center rounded-2xl transition-all active:scale-95"
+            className="bg-emerald-600 hover:bg-emerald-500 text-white w-12 h-12 flex items-center justify-center rounded-2xl transition-all active:scale-95"
           >
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M12 4v16m8-8H4" />
@@ -85,8 +85,8 @@ const TodoList: React.FC = () => {
                   onClick={() => toggleTodo(todo.id)}
                   className={`w-6 h-6 rounded-lg flex items-center justify-center border-2 transition-all ${
                     todo.completed 
-                      ? 'bg-indigo-500 border-indigo-500' 
-                      : 'border-slate-700 hover:border-indigo-500/50'
+                      ? 'bg-emerald-500 border-emerald-500' 
+                      : 'border-slate-700 hover:border-emerald-500/50'
                   }`}
                 >
                   {todo.completed && (

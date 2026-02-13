@@ -41,12 +41,12 @@ const Header: React.FC = () => {
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         {/* Logo */}
         <div className="flex items-center gap-3 group cursor-pointer">
-          <div className="relative w-10 h-10 bg-gradient-to-tr from-indigo-600 to-violet-500 rounded-xl flex items-center justify-center text-white font-bold shadow-lg shadow-indigo-500/20 group-hover:rotate-6 transition-transform duration-300">
+          <div className="relative w-10 h-10 bg-gradient-to-tr from-emerald-600 to-teal-500 rounded-xl flex items-center justify-center text-white font-bold shadow-lg shadow-emerald-500/20 group-hover:rotate-6 transition-transform duration-300">
             <span className="text-xl">A</span>
             <div className="absolute inset-0 bg-white/20 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity blur-[2px]"></div>
           </div>
           <span className="font-outfit font-bold text-xl md:text-2xl tracking-tight text-white flex flex-col md:flex-row md:items-center">
-            AI Life <span className="text-indigo-400 md:ml-1.5">Planner</span>
+            AI Life <span className="text-emerald-400 md:ml-1.5">Planner</span>
           </span>
         </div>
 
@@ -59,7 +59,7 @@ const Header: React.FC = () => {
               className="relative text-sm font-medium text-slate-300 hover:text-white transition-all duration-300 group"
             >
               {item.name}
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-indigo-500 transition-all duration-300 group-hover:w-full"></span>
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-emerald-500 transition-all duration-300 group-hover:w-full"></span>
             </a>
           ))}
         </nav>
@@ -101,14 +101,14 @@ const Header: React.FC = () => {
               key={item.name}
               href={item.href} 
               onClick={() => setIsMobileMenuOpen(false)}
-              className="text-lg font-medium text-slate-300 hover:text-indigo-400 transition-colors"
+              className="text-lg font-medium text-slate-300 hover:text-emerald-400 transition-colors"
             >
               {item.name}
             </a>
           ))}
           <button 
             onClick={handleLogout}
-            className="w-full bg-red-500/10 text-red-400 border border-red-500/20 py-4 rounded-2xl font-bold active:scale-95 transition-transform"
+            className="w-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 py-4 rounded-2xl font-bold active:scale-95 transition-transform"
           >
             Sign Out
           </button>

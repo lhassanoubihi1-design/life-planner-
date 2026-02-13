@@ -2,6 +2,7 @@
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 
+// Firebase configuration for the life planner application
 const firebaseConfig = {
   apiKey: "AIzaSyBXEZV0IEvptAPK4gB-FAZpImlkPv7jhLI",
   authDomain: "lhsnapp-921d5.firebaseapp.com",
@@ -12,5 +13,7 @@ const firebaseConfig = {
   measurementId: "G-1NPP69DTLP"
 };
 
+// Initialize Firebase using modular SDK
+// The initializeApp function is the core entry point for the Firebase Web SDK v9+
 const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);

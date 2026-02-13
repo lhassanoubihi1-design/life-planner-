@@ -18,13 +18,13 @@ const WeeklyPlanner: React.FC<WeeklyPlannerProps> = ({ schedule }) => {
         {schedule.map((item, idx) => (
           <div 
             key={idx} 
-            className="group relative bg-slate-900/40 border border-slate-800 p-5 rounded-3xl hover:bg-slate-800/60 hover:border-indigo-500/50 transition-all duration-300"
+            className="group relative bg-slate-900/40 border border-slate-800 p-5 rounded-3xl hover:bg-slate-800/60 hover:border-emerald-500/50 transition-all duration-300"
           >
             <div className="absolute top-0 right-0 p-3 opacity-0 group-hover:opacity-100 transition-opacity">
-              <div className="w-1.5 h-1.5 rounded-full bg-indigo-500 animate-pulse"></div>
+              <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></div>
             </div>
             
-            <span className="block text-xs font-bold text-indigo-400 uppercase tracking-widest mb-4">
+            <span className="block text-xs font-bold text-emerald-400 uppercase tracking-widest mb-4">
               {item.day}
             </span>
             

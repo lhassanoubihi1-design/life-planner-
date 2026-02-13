@@ -5,24 +5,24 @@ const Hero: React.FC = () => {
   return (
     <section id="home" className="relative pt-48 pb-32 px-6 overflow-hidden">
       {/* Dynamic Background Elements */}
-      <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-indigo-600/20 blur-[120px] rounded-full -z-10 animate-pulse"></div>
-      <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-fuchsia-600/10 blur-[100px] rounded-full -z-10 animate-pulse" style={{ animationDelay: '2s' }}></div>
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[300px] bg-violet-600/5 blur-[150px] rounded-full -z-10 rotate-12"></div>
+      <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-emerald-600/20 blur-[120px] rounded-full -z-10 animate-pulse"></div>
+      <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-teal-600/10 blur-[100px] rounded-full -z-10 animate-pulse" style={{ animationDelay: '2s' }}></div>
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[300px] bg-emerald-600/5 blur-[150px] rounded-full -z-10 rotate-12"></div>
 
       <div className="max-w-7xl mx-auto text-center relative z-10">
         {/* Badge */}
         <div className="inline-flex items-center gap-2 px-4 py-2 mb-10 rounded-full bg-white/5 border border-white/10 backdrop-blur-md shadow-2xl animate-in fade-in slide-in-from-bottom-4 duration-700">
           <span className="relative flex h-2 w-2">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span>
-            <span className="relative inline-flex rounded-full h-2 w-2 bg-indigo-500"></span>
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+            <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
           </span>
-          <span className="text-indigo-300 font-bold text-[10px] tracking-[0.2em] uppercase">Powered by Gemini 2.5 Flash</span>
+          <span className="text-emerald-300 font-bold text-[10px] tracking-[0.2em] uppercase">Powered by Gemini 3 Pro</span>
         </div>
         
         {/* Headline */}
         <h1 className="text-6xl md:text-9xl font-black font-outfit text-white mb-8 leading-[0.95] tracking-tighter animate-in fade-in slide-in-from-bottom-6 duration-1000">
           DESIGN YOUR <br />
-          <span className="text-transparent bg-clip-text bg-gradient-to-br from-indigo-400 via-violet-400 to-fuchsia-400 animate-gradient">ULTIMATE LIFE.</span>
+          <span className="text-transparent bg-clip-text bg-gradient-to-br from-emerald-400 via-teal-400 to-green-400 animate-gradient">ULTIMATE LIFE.</span>
         </h1>
         
         {/* Sub-headline */}
@@ -34,9 +34,9 @@ const Hero: React.FC = () => {
         <div className="flex flex-col sm:flex-row items-center justify-center gap-6 animate-in fade-in slide-in-from-bottom-10 duration-1000 delay-300">
           <a 
             href="#planner" 
-            className="group relative w-full sm:w-auto px-12 py-5 bg-white text-slate-950 rounded-2xl font-black text-lg shadow-[0_0_40px_rgba(255,255,255,0.15)] hover:shadow-indigo-500/40 hover:scale-[1.02] active:scale-95 transition-all duration-300 overflow-hidden"
+            className="group relative w-full sm:w-auto px-12 py-5 bg-white text-slate-950 rounded-2xl font-black text-lg shadow-[0_0_40px_rgba(255,255,255,0.15)] hover:shadow-emerald-500/40 hover:scale-[1.02] active:scale-95 transition-all duration-300 overflow-hidden"
           >
-            <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-violet-500 opacity-0 group-hover:opacity-10 transition-opacity"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-emerald-500 to-teal-500 opacity-0 group-hover:opacity-10 transition-opacity"></div>
             <span className="relative flex items-center gap-3">
               Generate My Blueprint
               <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
@@ -51,7 +51,7 @@ const Hero: React.FC = () => {
         {/* Product Visual */}
         <div className="mt-32 relative group max-w-5xl mx-auto">
           {/* Glass Card Container */}
-          <div className="absolute -inset-1 bg-gradient-to-r from-indigo-500/50 via-fuchsia-500/50 to-violet-500/50 rounded-[2.5rem] blur-2xl opacity-20 group-hover:opacity-40 transition duration-1000"></div>
+          <div className="absolute -inset-1 bg-gradient-to-r from-emerald-500/50 via-teal-500/50 to-green-500/50 rounded-[2.5rem] blur-2xl opacity-20 group-hover:opacity-40 transition duration-1000"></div>
           
           <div className="relative bg-slate-900 rounded-[2rem] overflow-hidden border border-white/10 shadow-2xl aspect-[16/8]">
              {/* Mock UI Elements */}
@@ -74,10 +74,10 @@ const Hero: React.FC = () => {
              {/* Floating Info Cards (Aesthetic) */}
              <div className="absolute bottom-12 left-12 p-6 bg-slate-900/80 backdrop-blur-2xl border border-white/10 rounded-3xl hidden md:block animate-bounce shadow-2xl" style={{ animationDuration: '4s' }}>
                 <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-2xl bg-indigo-500 flex items-center justify-center text-xl shadow-lg shadow-indigo-500/20">⚡</div>
+                  <div className="w-12 h-12 rounded-2xl bg-emerald-500 flex items-center justify-center text-xl shadow-lg shadow-emerald-500/20">⚡</div>
                   <div>
                     <p className="text-white font-bold text-sm">Deep Work Session</p>
-                    <p className="text-indigo-300 text-xs font-medium">9:00 AM — 12:00 PM</p>
+                    <p className="text-emerald-300 text-xs font-medium">9:00 AM — 12:00 PM</p>
                   </div>
                 </div>
              </div>

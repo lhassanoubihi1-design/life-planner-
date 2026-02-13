@@ -1,17 +1,30 @@
 
-import React, { useState, useCallback } from 'react';
+import React, { useState, useCallback, useEffect } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import TodoList from './components/TodoList';
 import PlanForm from './components/PlanForm';
 import PlanDisplay from './components/PlanDisplay';
+import Auth from './components/Auth';
 import { generatePlan } from './services/aiService';
 import { UserPreferences, LifePlan } from './types';
+import { auth } from './services/firebase';
+import { onAuthStateChanged, User } from 'firebase/auth';
 
 const App: React.FC = () => {
+  const [user, setUser] = useState<User | null>(null);
+  const [authLoading, setAuthLoading] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
   const [plan, setPlan] = useState<LifePlan | null>(null);
   const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+      setUser(currentUser);
+      setAuthLoading(false);
+    });
+    return () => unsubscribe();
+  }, []);
 
   const handleFormSubmit = useCallback(async (prefs: UserPreferences) => {
     setIsLoading(true);
@@ -33,6 +46,18 @@ const App: React.FC = () => {
       setIsLoading(false);
     }
   }, []);
+
+  if (authLoading) {
+    return (
+      <div className="min-h-screen bg-slate-950 flex items-center justify-center">
+        <div className="w-10 h-10 border-4 border-indigo-500/30 border-t-indigo-500 rounded-full animate-spin"></div>
+      </div>
+    );
+  }
+
+  if (!user) {
+    return <Auth />;
+  }
 
   return (
     <div className="min-h-screen bg-slate-950 text-slate-200 overflow-x-hidden antialiased">

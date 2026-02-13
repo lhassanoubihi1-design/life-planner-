@@ -1,5 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
+import { signOut } from 'firebase/auth';
+import { auth } from '../services/firebase';
 
 const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -12,6 +14,14 @@ const Header: React.FC = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  const handleLogout = async () => {
+    try {
+      await signOut(auth);
+    } catch (error) {
+      console.error("Logout error", error);
+    }
+  };
 
   const navItems = [
     { name: 'Home', href: '#home' },
@@ -56,8 +66,12 @@ const Header: React.FC = () => {
 
         {/* Action Button & Mobile Toggle */}
         <div className="flex items-center gap-4">
-          <button className="hidden sm:block bg-white text-slate-950 px-7 py-2.5 rounded-full text-sm font-bold hover:bg-indigo-50 hover:scale-105 active:scale-95 transition-all shadow-[0_0_20px_rgba(255,255,255,0.1)]">
-            Get Started
+          <button 
+            onClick={handleLogout}
+            className="hidden sm:flex items-center gap-2 bg-slate-900 border border-white/10 text-white px-5 py-2 rounded-full text-xs font-bold hover:bg-slate-800 transition-all active:scale-95"
+          >
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"/></svg>
+            Logout
           </button>
           
           <button 
@@ -92,8 +106,11 @@ const Header: React.FC = () => {
               {item.name}
             </a>
           ))}
-          <button className="w-full bg-indigo-600 text-white py-4 rounded-2xl font-bold shadow-lg shadow-indigo-600/20 active:scale-95 transition-transform">
-            Get Started
+          <button 
+            onClick={handleLogout}
+            className="w-full bg-red-500/10 text-red-400 border border-red-500/20 py-4 rounded-2xl font-bold active:scale-95 transition-transform"
+          >
+            Sign Out
           </button>
         </div>
       </div>

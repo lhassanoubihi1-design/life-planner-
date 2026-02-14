@@ -35,3 +35,32 @@ export interface UserPreferences {
   energyLevel: 'low' | 'moderate' | 'high';
   tone: 'gentle' | 'disciplined' | 'motivational';
 }
+
+// New types for dashboard
+export interface Folder {
+  id: string;
+  name: string;
+  createdAt: any;
+}
+
+export interface File {
+  id: string;
+  name: string;
+  folderId?: string;
+  size: number;
+  createdAt: any;
+}
+
+export interface Note {
+  id: string;
+  title: string;
+  content: string;
+  createdAt: any;
+}
+
+export interface TeamMember {
+  id: string;
+  name: string;
+  role: string;
+  createdAt: any;
+}

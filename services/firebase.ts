@@ -1,5 +1,7 @@
+// FIX: Changed to a namespace import to handle potential module resolution issues.
 import * as firebase from "firebase/app";
 import { getAuth } from "firebase/auth";
+import { getFirestore } from "firebase/firestore";
 
 // Firebase configuration for the life planner application
 const firebaseConfig = {
@@ -12,7 +14,7 @@ const firebaseConfig = {
   measurementId: "G-1NPP69DTLP"
 };
 
-// Initialize Firebase using the standard modular SDK
-// Fix: Using namespace import to potentially resolve module loading errors.
+// FIX: Use initializeApp from the namespace import.
 const app = firebase.initializeApp(firebaseConfig);
 export const auth = getAuth(app);
+export const db = getFirestore(app);

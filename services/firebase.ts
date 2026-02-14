@@ -1,5 +1,4 @@
-
-import { initializeApp } from "firebase/app";
+import * as firebase from "firebase/app";
 import { getAuth } from "firebase/auth";
 
 // Firebase configuration for the life planner application
@@ -13,7 +12,7 @@ const firebaseConfig = {
   measurementId: "G-1NPP69DTLP"
 };
 
-// Initialize Firebase using modular SDK
-// The initializeApp function is the core entry point for the Firebase Web SDK v9+
-const app = initializeApp(firebaseConfig);
+// Initialize Firebase using the standard modular SDK
+// Fix: Using namespace import to potentially resolve module loading errors.
+const app = firebase.initializeApp(firebaseConfig);
 export const auth = getAuth(app);

@@ -1,9 +1,10 @@
-
-import { GoogleGenAI, Type } from "@google/genai";
+// Fix: Follow @google/genai naming and initialization guidelines
+import { GoogleGenAI, Type, GenerateContentResponse } from "@google/genai";
 import { UserPreferences, LifePlan } from "../types";
 
+// Generates a personalized life plan using Gemini 3 Pro reasoning capabilities
 export const generatePlan = async (prefs: UserPreferences): Promise<LifePlan> => {
-  // Use the API key directly from process.env.API_KEY as per GenAI guidelines
+  // Always use {apiKey: process.env.API_KEY} for initialization as per guidelines
   const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
   
   const prompt = `Create a detailed, hyper-personalized premium life plan for ${prefs.name}. 
@@ -13,14 +14,15 @@ export const generatePlan = async (prefs: UserPreferences): Promise<LifePlan> =>
   Plan tone: ${prefs.tone}. 
   Include a structured routine, habits, weekly milestones, and a specific 7-day schedule (Monday to Sunday) that progressively builds toward the main goal.`;
 
-  // Upgraded to gemini-3-pro-preview for complex reasoning and planning tasks
-  const response = await ai.models.generateContent({
+  // Using gemini-3-pro-preview for complex reasoning and lifestyle architecture tasks
+  const response: GenerateContentResponse = await ai.models.generateContent({
     model: 'gemini-3-pro-preview',
     contents: prompt,
     config: {
       systemInstruction: "You are a world-class performance coach. Your plans are visually rich, actionable, and logically structured. Output ONLY valid JSON according to the schema. Ensure the weeklySchedule has exactly 7 days.",
       responseMimeType: "application/json",
-      // Leverage thinking capabilities for complex lifestyle architecture and long-term planning
+      // Fix: Must set both maxOutputTokens and thinkingBudget together to avoid token depletion
+      maxOutputTokens: 12000,
       thinkingConfig: { thinkingBudget: 4000 },
       responseSchema: {
         type: Type.OBJECT,
@@ -106,8 +108,9 @@ export const generatePlan = async (prefs: UserPreferences): Promise<LifePlan> =>
   });
 
   try {
-    // Access response.text property directly as per the latest SDK guidelines
-    const data = JSON.parse(response.text || '{}');
+    // Fix: Accessing response.text directly as it is a property, not a method
+    const text = response.text || '{}';
+    const data = JSON.parse(text);
     return data as LifePlan;
   } catch (error) {
     console.error("Failed to parse AI response:", error);
